@@ -20,7 +20,7 @@
 int main() {
 
     const short n_col = 8; // nombre de colones lors de l'affichage des nombre premiers
-    char restart = 'N';
+    char restart;
     do {
         short limite;
         do {// 2. Saisie de la limite par l'utilisateur
@@ -30,6 +30,7 @@ int main() {
 
         std::cout << std::endl << "Voici la liste des nombres premiers: " << std::endl;
 
+        // 3. Calculs des nombres premiers et affichage
         short numberOuputed = 0; // nombre de nombre écris sur la ligne actuelle
         for (int i = 1; i <= limite; ++i) {
             if (i != 1) { // enleve 1 car pas un nombre premier
@@ -44,7 +45,8 @@ int main() {
             }
         }
 
-        do {// 4. Demander à l'utilisateur si il veut recommencer
+        // 4. Demander à l'utilisateur si il veut recommencer
+        do {
             std::cout << std::endl << std::endl << "Voulez-vous recommencer [O/N] : ";
             std::cin >> restart;
         }while (!(restart == 'O' || restart == 'N'));
