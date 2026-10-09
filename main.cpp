@@ -35,13 +35,15 @@ int main() {
         for (int i = 1; i <= limite; ++i) {
             if (i != 1) { // enleve 1 car pas un nombre premier
                 int j;
-                for (j = 2; j < (i/2)+1; ++j) { // fait le modulo avec tous les nombres avant lui
-                    // std::cout << "j : " << j  << ", i : " << i << std::endl;
-                    if (i%j == 0) break;
-                }
-                if (!(j<(i/2)+1)) { // si le nombre est premier
-                    std::cout << std::setw(7) << i;
-                    if (!(++numberOuputed % n_col)) std::cout << std::endl;
+                if (i%2 != 0) {
+                    for (j = 3; j < (i/2)+1; j+=2) { // fait le modulo avec tous les nombres avant lui
+                        // std::cout << "j : " << j  << ", i : " << i << std::endl;
+                        if (i%j == 0) break;
+                    }
+                    if (!(j<(i/2)+1)) { // si le nombre est premier
+                        std::cout << std::setw(7) << i;
+                        if (!(++numberOuputed % n_col)) std::cout << std::endl;
+                    }
                 }
             }
         }
