@@ -22,6 +22,7 @@ int main() {
 
     const short n_col = 8; // nombre de colones lors de l'affichage des nombre premiers
     char restart;
+    unsigned short spacing = 7;
 
     do {
         short limite;
@@ -36,6 +37,7 @@ int main() {
 
         // 3. Calculs des nombres premiers et affichage
         short numberOuputed = 0; // nombre de nombre écris sur la ligne actuelle
+        std::cout << std::setw(spacing) << '2';
         for (int i = 1; i <= limite; ++i) {
             if (i != 1) { // enleve 1 car pas un nombre premier
                 int j;
@@ -43,11 +45,12 @@ int main() {
                     for (j = 3; j < (i/2)+1; j+=2) { // fait le modulo avec tous les nombres impaire avant lui
                         if (i%j == 0) break; // si le nombre est pas premier, on quite la boucle
                     }
+                    if (!(j<(i/2)+1)) { // si le nombre est premier
+                        std::cout << std::setw(spacing) << i;
+                        if (!(++numberOuputed % n_col)) std::cout << std::endl;
+                    }
                 }
-                if (!(j<(i/2)+1) || i==2) { // si le nombre est premier
-                    std::cout << std::setw(7) << i;
-                    if (!(++numberOuputed % n_col)) std::cout << std::endl;
-                }
+
             }
         }
 
