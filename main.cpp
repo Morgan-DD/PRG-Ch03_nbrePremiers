@@ -20,7 +20,7 @@
 
 int main() {
 
-    const short n_col = 8; // nombre de colones lors de l'affichage des nombre premiers
+    const short n_col = 5; // nombre de colones lors de l'affichage des nombre premiers
     char restart;
     unsigned short spacing = 7;
 
