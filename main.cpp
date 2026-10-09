@@ -16,11 +16,13 @@
 #include <iostream>
 #include <cstdlib>
 #include <iomanip>
+#include <limits>
 
 int main() {
 
     const short n_col = 8; // nombre de colones lors de l'affichage des nombre premiers
     char restart;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     do {
         short limite;
         do {// 2. Saisie de la limite par l'utilisateur
