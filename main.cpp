@@ -37,7 +37,7 @@ int main() {
 
         // 3. Calculs des nombres premiers et affichage
         short numberOuputed = 0; // nombre de nombre écris sur la ligne actuelle
-        std::cout << std::setw(spacing) << '2';
+        std::cout << std::setw(spacing) << '2'; ++numberOuputed;
         for (int i = 1; i <= limite; ++i) {
             if (i != 1) { // enleve 1 car pas un nombre premier
                 int j;
